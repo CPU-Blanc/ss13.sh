@@ -214,7 +214,7 @@ echo -e "${GREEN}Setting up fonts...${NC}"
 
 # regedit fontsmooth.reg 2>&1 >log/regedit.log
 
-# winetricks -q allfonts 2>&1 >log/fonts.log
+winetricks -q corefonts 2>&1 >log/fonts.log
 
 # winetricks -q settings fontsmooth=rgb 2>&1 >>log/regedit.log
 
@@ -266,7 +266,7 @@ Icon=$SS13DIR/icon.png
 
 Terminal=false
 
-Categories=Games;
+Categories=Game;
 
 EOF
 
