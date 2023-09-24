@@ -10,6 +10,11 @@ BLUE='\033[0;34m'
 
 NC='\033[0m'
 
+BYOND_MAJOR='514'
+BYOND_MINOR='1589'
+
+BYOND_VERSION="${BYOND_MAJOR}.${BYOND_MINOR}"
+
 mkdir -p log
 
 echo -e "${GREEN}Checking for wine...${NC}"
@@ -90,9 +95,8 @@ fi
 
 #MAJORURL=
 
-FULLVER=512.1461_byond.zip
-
-FULLURL=http://www.byond.com/download/build/512/512.1461_byond.zip
+FILENAME=${BYOND_VERSION}_byond.zip
+FULLURL=http://www.byond.com/download/build/${BYOND_MAJOR}/${FILENAME}
 
 if [ ! -d "$SS13DIR/drive_c/Program Files/BYOND" ]
 
@@ -104,17 +108,17 @@ then
 
     mkdir -p ziptmp
 
-    unzip -qq 512.1461_byond.zip -d ziptmp
+    unzip -qq $FILENAME -d ziptmp
 
     ls ziptmp
 
     mv ziptmp/byond $SS13DIR/drive_c/Program\ Files/BYOND
 
-    rm ./512.1461_byond.zip
+    rm ./${FILENAME}
 
     rm -rf ziptmp
 
-    echo "512.1461_byond.zip" > $SS13DIR/.byondver
+    echo "${BYOND_VERSION}" > $SS13DIR/.byondver
 
     echo -e "${BLUE}Done!${NC}"
 
@@ -122,11 +126,11 @@ else
 
     echo -e "${BLUE}Detected BYOND install with version ${DETECTED}.${NC}"
 
-    if [ "$DETECTED" \< "$FULLVER" -a "$DETECTED" != "$FULLVER" ]
+    if [ "$DETECTED" \< "$BYOND_VERSION" -a "$DETECTED" != "$BYOND_VERSION" ]
 
     then
 
-	echo -e "${BLUE}BYOND install is out of date, installing version ${FULLVER}.${NC}"
+	echo -e "${BLUE}BYOND install is out of date, installing version ${BYOND_VERSION}.${NC}"
 
 	rm -rf $SS13DIR/drive_c/Program\ Files/BYOND
 
@@ -134,17 +138,17 @@ else
 
 	mkdir -p ziptmp
 
-	unzip -qq $FULLVER -d ziptmp
+	unzip -qq $FILENAME -d ziptmp
 
 	ls ziptmp
 
 	mv ziptmp/byond $SS13DIR/drive_c/Program\ Files/BYOND
 
-	rm ./$FULLVER
+	rm ./$FILENAME
 
 	rm -rf ziptmp
 
-	echo "$FULLVER" > $SS13DIR/.byondver
+	echo "$BYOND_VERSION" > $SS13DIR/.byondver
 
 	echo -e "${BLUE}Done!${NC}"
 
