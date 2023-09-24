@@ -15,14 +15,20 @@ After you've made sure that wine and winetricks are properly installed, you'll w
 Finally, enter the following command:
 
 ```
-curl https://raw.githubusercontent.com/Zero-Bits/ss13.sh/master/ss13.sh | bash
+curl https://raw.githubusercontent.com/CPU-Blanc/ss13.sh/master/ss13.sh | bash
 ```
 
-# How to Update/Play BYOND
+# How to Play BYOND
 
-Run the ` runss13.sh` script that was generated in your BYOND directory.
+Run the `runss13.sh` script that was generated in your BYOND directory.
 
 You can do this by `cd`ing into the directory and typing `bash runss13.sh`.
+
+# How to Update BYOND
+
+Run the `updatess13.sh` script that was generated in your BYOND directory.
+
+You can do this by `cd`ing into the directory and typing `bash updatess13.sh`.
 
 # Alternative Methods
 If this script isn't your cup of tea or doesn't work for you, then there are a few other methods of running BYOND on Linux:
