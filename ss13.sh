@@ -245,6 +245,7 @@ function install_post {
 if [[ "$SS13_UPDATE" == "true" ]]; then
     echo -e "${GREEN}Updating BYOND...${NC}"
     install_byond
+    rm -rf ./log
     exit 0
 fi
 
