@@ -42,3 +42,5 @@ If this script isn't your cup of tea or doesn't work for you, then there are a f
 Credit to /u/Xaltonon on reddit for the original bash script and guide, as well as /u/KarniinTheMighty on reddit and Gman0064 on github for their fixes and guides.
 
 Additional credit to Zamura-0001 on BYOND for the icon being used.
+
+Credit to [Zero-Bits](https://github.com/Zero-Bits) for the [original shell script](https://github.com/Zero-Bits/ss13.sh) that this is a fork of.
